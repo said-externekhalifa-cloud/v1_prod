@@ -110,3 +110,14 @@ form button {
 .delete-btn {
   background-color: #f44336;
 }
+
+/* Dashboard Styles */
+.dashboard-section {
+  margin-top: 2rem;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
