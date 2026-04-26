@@ -1,11 +1,19 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const sequelize = require('./src/config/database');
+const productRoutes = require('./src/routes/productRoutes');
+
+app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Bienvenue sur l'API Produits!');
+  res.send('Bienvenue sur l\'API Produits!');
 });
 
-app.listen(port, () => {
-  console.log(`Serveur démarré sur http://localhost:${port}`);
+app.use('/api/products', productRoutes);
+
+sequelize.sync().then(() => {
+  app.listen(port, () => {
+    console.log(`Serveur démarré sur http://localhost:${port}`);
+  });
 });
