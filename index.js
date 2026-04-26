@@ -5,7 +5,9 @@ const sequelize = require('./src/config/database');
 const productRoutes = require('./src/routes/productRoutes');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./src/config/swagger');
+const cors = require('cors');
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
