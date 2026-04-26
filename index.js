@@ -9,7 +9,7 @@ const swaggerSpec = require('./src/config/swagger');
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Bienvenue sur l'API Produits!');
+  res.send("Bienvenue sur l'API Produits!");
 });
 
 app.use('/api/products', productRoutes);
